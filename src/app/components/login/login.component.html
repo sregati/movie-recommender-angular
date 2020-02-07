@@ -1,20 +1,27 @@
-<p>Welcome to Recommendations</p>
-<mat-toolbar>User Login</mat-toolbar>
 
-<div class="example-container">
-<br>
-<mat-form-field appearance="fill">
-  <mat-label>Email </mat-label>
-  <input matInput placeholder="Enetr Email">
-</mat-form-field>
-<br>
-<mat-form-field appearance="fill">
-  <mat-label>Enter Password </mat-label>
-  <input matInput placeholder="password">
-</mat-form-field>
-<br>
-<button mat-button>Cancel</button>
-<button mat-button>Login</button>
-
+<mat-toolbar>Welcome To Login Page</mat-toolbar>
+<mat-card class="my-card">
+   <mat-card-content>
+       <form class="my-form">
+           
+            <mat-form-field class="full-width">
+               <mat-label>Email</mat-label>
+               <input  matInput  placeholder="Email" name="email">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+               <mat-label>Password</mat-label>
+               <input  matInput  placeholder="Password"  name="password">
+            </mat-form-field>
+            
+       </form> 
+     <!-- CONTENT HERE -->
+   
   
-    
+   </mat-card-content>
+   <mat-card-actions>
+     <!-- REGISTER BUTTON -->
+   </mat-card-actions>
+   <!-- <button mat-stroked-button color="cancel">Cancel</button> -->
+   <button mat-stroked-button [routerLink]="['/register']" routerLinkActive="mat-accent" color="login">Login</button>
+ 
+</mat-card>
