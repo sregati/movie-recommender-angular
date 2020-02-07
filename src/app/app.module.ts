@@ -11,15 +11,16 @@ import { RegisterComponent } from './components/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { RecommendationComponent } from './components/recommendation/recommendation.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
     
-    
+    RecommendationComponent
   ],
   imports: [
     BrowserModule,

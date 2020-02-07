@@ -8,6 +8,8 @@ import { RecommendationComponent } from './components/recommendation/recommendat
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'recommendation', component: RecommendationComponent },
+  { path: 'register', component: RegisterComponent },
+ 
 ];
 
 @NgModule({
