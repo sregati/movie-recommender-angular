@@ -1,1 +1,15 @@
- <app-login></app-login>
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button [routerLink]="'/recommendation'"> Recommendation </a>
+      <a mat-button [routerLink]="'/recommendation'"> Movies </a>
+      <a mat-button [routerLink]="'/login'"> Logout </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+
+<app-recommendation></app-recommendation>
