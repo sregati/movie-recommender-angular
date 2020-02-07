@@ -20,7 +20,6 @@ import { UserprofileComponent } from './components/userprofile/userprofile.compo
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    RecommendationComponent
     
     RecommendationComponent,
     
