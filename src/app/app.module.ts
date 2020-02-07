@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import {MatCardModule, MatGridListModule, MatToolbarModule, MatButtonModule} from '@angular/material';
-
+import {MatNativeDateModule,MatDatepickerModule,MatIconModule,  MatInputModule,MatRadioModule,MatListModule,} from  '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { RecommendationComponent } from './components/recommendation/recommendation.component';
+import { UserprofileComponent } from './components/userprofile/userprofile.component';
 
 
 @NgModule({
@@ -20,7 +21,9 @@ import { RecommendationComponent } from './components/recommendation/recommendat
     LoginComponent,
     RegisterComponent,
     
-    RecommendationComponent
+    RecommendationComponent,
+    
+    UserprofileComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,13 @@ import { RecommendationComponent } from './components/recommendation/recommendat
     MatGridListModule,
     MatCardModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatIconModule,  
+    MatInputModule,
+    MatRadioModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,43 +1,46 @@
 
-<mat-toolbar>Welcome To Registration Page</mat-toolbar>
 
-<div class="example-container">
-    <mat-form-field appearance="fill">
-      <mat-label>First Name</mat-label>
-      <input matInput placeholder="Enter First Name">
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="fill">
-        <mat-label>Last Name</mat-label>
-        <input matInput placeholder="Enter Last Name">
-        
-      </mat-form-field>
-      <br>
-      <mat-form-field appearance="fill">
-        <mat-label>Email </mat-label>
-        <input matInput placeholder="Enetr Email">
-      </mat-form-field>
-      <br>
-      <mat-form-field appearance="fill">
-        <mat-label>Enter Password </mat-label>
-        <input matInput placeholder="password">
-      </mat-form-field>
-      <br>
-      <mat-form-field appearance="fill">
-        <mat-label>Confirm Password </mat-label>
-        <input matInput placeholder="Confirm Password">
-      </mat-form-field>
-      <br>
-        
-      <mat-checkbox>Check me!</mat-checkbox>
-        <mat-checkbox>Action</mat-checkbox>
-        <mat-checkbox  >Comdedy</mat-checkbox>
-        <mat-checkbox >Horror</mat-checkbox>
-        <mat-checkbox >Animation</mat-checkbox>
-        <mat-checkbox >Drama</mat-checkbox>
-        <mat-checkbox>Historical</mat-checkbox>
+
+<mat-toolbar style="text-align: center">Welcome To Registration Page</mat-toolbar>
+ <mat-card class="my-card">
+    <mat-card-content>
+        <form class="my-form">
+            <mat-form-field class="full-width">
+                <mat-label>First Name</mat-label>
+                <input  matInput  placeholder="First name"  name="fname"  required>
+             </mat-form-field>
+             <mat-form-field class="full-width">
+                <mat-label>Last Name</mat-label>
+                <input  matInput  placeholder="Last Name" name="lname"  required>
+             </mat-form-field>
+             <mat-form-field class="full-width">
+                <mat-label>Email</mat-label>
+                <input  matInput  placeholder="Email" name="email">
+             </mat-form-field>
+             <mat-form-field class="full-width">
+                <mat-label>Password</mat-label>
+                <input  matInput  placeholder="Password"  name="password">
+             </mat-form-field>
+             <mat-form-field class="full-width">
+                <mat-label>Confirm Password</mat-label>
+                <input  matInput  placeholder="Password"  name="password">
+             </mat-form-field>
+        </form> 
+      <!-- CONTENT HERE -->
+      <mat-label><h3> Select the Genre</h3></mat-label> 
+      <mat-checkbox>Action</mat-checkbox><br>
+      <mat-checkbox  >Comdedy</mat-checkbox><br>
+      <mat-checkbox >Horror</mat-checkbox><br>
+      <mat-checkbox >Animation</mat-checkbox><br>
+      <mat-checkbox >Drama</mat-checkbox><br>
+      <mat-checkbox>Historical</mat-checkbox><br>
    
-
-   <br>
-      <button mat-button>Cancel</button>
-      <button mat-button>Register</button>
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- REGISTER BUTTON -->
+    </mat-card-actions>
+    <button mat-stroked-button color="warn">Cancel</button>
+    <button mat-stroked-button [routerLink]="['/login']" routerLinkActive="mat-accent" color ="primary">Register</button>
+  
+ </mat-card>
+      
