@@ -12,7 +12,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { RecommendationComponent } from './components/recommendation/recommendation.component';
-import { UserprofileComponent } from './components/userprofile/userprofile.component';
+import { AuthInterceptor } from './auth-interceptor';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+//import { UserprofileComponent } from './components/userprofile/userprofile.component';
 
 
 @NgModule({
@@ -20,12 +22,11 @@ import { UserprofileComponent } from './components/userprofile/userprofile.compo
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    
     RecommendationComponent,
-    
-    UserprofileComponent
+    //UserprofileComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -43,7 +44,7 @@ import { UserprofileComponent } from './components/userprofile/userprofile.compo
     MatRadioModule,
     MatListModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
