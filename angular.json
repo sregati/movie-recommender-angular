@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "movie-recommender-angular"
+  "defaultProject": "movie-recommender-angular",
+  "cli": {
+    "analytics": "cf05650c-f7bd-4e43-b869-7a3ca53d79c9"
+  }
 }

@@ -18,7 +18,7 @@ const routes: Routes = [
         path: '',
         canActivateChild: [AuthGuard],
         children: [
-          { path: '', redirectTo: '/', pathMatch: 'full' },
+          { path: '', component: RecommendationComponent },
           { path: 'recommendation', component: RecommendationComponent },
           { path: 'movies', component: RecommendationComponent },
           //{ path: 'userprofile', component: UserprofileComponent }
