@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject, BehaviorSubject } from 'rxjs';
-import { tap, map } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 
 @Injectable({
@@ -16,7 +16,7 @@ export class LoginService {
 
   loginAuth(email, password) {
     return this.http.post('/api/loginAuth', { email: email, password: password }).pipe(
-      map(m => {
+      tap(m => {
         localStorage.setItem('token', m.toString());
         this.currentTokenSubject.next(localStorage.getItem('token'));
       })
