@@ -59,6 +59,14 @@ export class LoginService {
     //   })
     // );
   }
+
+
+registerAuth(user: User) {
+    return this.http.post("/user", user);
+}
+
+
+  
   logout() {
     localStorage.removeItem('token');
     this.currentTokenSubject.next(null);
