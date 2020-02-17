@@ -26,6 +26,7 @@ import { RecommendationComponent } from './components/recommendation/recommendat
 import { AuthInterceptor } from './auth-interceptor';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
+import { MoviesComponent } from './components/movies/movies.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { UserprofileComponent } from './components/userprofile/userprofile.compo
     RegisterComponent,
     
     RecommendationComponent,
-    UserprofileComponent
+    UserprofileComponent,
+    MoviesComponent
   ],
   imports: [
     HttpClientModule,

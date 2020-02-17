@@ -9,6 +9,7 @@ import { User } from '../user';
 })
 export class LoginService {
 
+  configUrl = 'assets/details.json';
   redirectUrl = "/";
   currentTokenSubject : BehaviorSubject<string>;
   users: any[] = [
@@ -64,6 +65,13 @@ export class LoginService {
 registerAuth(newUser: User) {
     //return this.http.post("/user", newUser);
     console.log(newUser);
+}
+
+// getUserDetailsById(id: number) {
+//   return this.http.get('/mrs/movies/'+id);
+// }
+getUserDetails() {
+  return this.http.get(this.configUrl);
 }
 
 

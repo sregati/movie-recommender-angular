@@ -11,18 +11,19 @@ import { Genre } from '../../genre'
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+
   firstName: string;
   lastName: string;
   email: string;
   password: string;
   liked: Genre[];
   Genre = [
-    { id: 1, name: 'Action' },
-    { id: 2, name: 'Comedy' },
-    { id: 3, name: 'Horror' },
-    { id: 4, name: 'Animation' },
-    { id: 5, name: 'Drama' },
-    { id: 6, name: 'Historical' }
+    { id: 11, name: 'Action' },
+    { id: 12, name: 'Comedy' },
+    { id: 13, name: 'Horror' },
+    { id: 14, name: 'Animation' },
+    { id: 15, name: 'Drama' },
+    { id: 16, name: 'Historical' }
   ];
 
 
@@ -35,4 +36,5 @@ export class RegisterComponent implements OnInit {
     this.login.registerAuth(newUser);
     this.router.navigate(['/login']);
   }
+
 }

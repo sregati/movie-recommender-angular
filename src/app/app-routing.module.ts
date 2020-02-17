@@ -5,6 +5,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
 import { RecommendationComponent } from './components/recommendation/recommendation.component';
 import { AuthGuard } from './auth.guard';
+import { MoviesComponent } from './components/movies/movies.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,7 @@ const routes: Routes = [
         children: [
           { path: '', component: RecommendationComponent },
           { path: 'recommendation', component: RecommendationComponent },
-          { path: 'movies', component: RecommendationComponent },
+          { path: 'movies', component: MoviesComponent },
           { path: 'userprofile', component: UserprofileComponent }
         ]
       }

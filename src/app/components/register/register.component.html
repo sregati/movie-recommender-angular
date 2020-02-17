@@ -29,20 +29,20 @@
                 <mat-label>Confirm Password</mat-label>
                 <input  matInput  placeholder="Password"  name="confirmPassword">
              </mat-form-field>
-        </form> 
+         
       <!-- CONTENT HERE -->
    <mat-label><h3> Select the Genre</h3></mat-label> 
-   <mat-label *ngFor="let g of Genre ;let i = index">
-      <mat-checkbox (ngModel) = "check" #check="ngModel"></mat-checkbox>
-         {{Genre[i].name}}
+   <mat-label *ngFor="let g of Genre">
+      <mat-checkbox value="{{g.id}}"></mat-checkbox>
+         {{g.name}}
    </mat-label>
-      <!-- <mat-checkbox>Action</mat-checkbox><br>
+      <!-- <mat-checkbox>Action</mat-checkbox (change)="onCheckboxChange(g,$event)"><br>
       <mat-checkbox  >Comdedy</mat-checkbox><br>
       <mat-checkbox >Horror</mat-checkbox><br>
       <mat-checkbox >Animation</mat-checkbox><br>
       <mat-checkbox >Drama</mat-checkbox><br>
       <mat-checkbox>Historical</mat-checkbox><br> -->
-
+</form>
     </mat-card-content>
     <mat-card-actions>
       <!-- REGISTER BUTTON -->
