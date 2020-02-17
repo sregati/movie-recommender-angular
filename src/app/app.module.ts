@@ -25,7 +25,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { RecommendationComponent } from './components/recommendation/recommendation.component';
 import { AuthInterceptor } from './auth-interceptor';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-//import { UserprofileComponent } from './components/userprofile/userprofile.component';
+import { UserprofileComponent } from './components/userprofile/userprofile.component';
 
 
 @NgModule({
@@ -35,7 +35,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     RegisterComponent,
     
     RecommendationComponent,
-    //UserprofileComponent
+    UserprofileComponent
   ],
   imports: [
     HttpClientModule,

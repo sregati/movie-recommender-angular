@@ -59,6 +59,15 @@ export class LoginService {
     //   })
     // );
   }
+
+
+registerAuth(newUser: User) {
+    //return this.http.post("/user", newUser);
+    console.log(newUser);
+}
+
+
+  
   logout() {
     localStorage.removeItem('token');
     this.currentTokenSubject.next(null);

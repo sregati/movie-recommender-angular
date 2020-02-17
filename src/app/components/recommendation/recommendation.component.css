@@ -1,6 +1,7 @@
 .movie-card {
     max-width: 600px;
     margin: 5%;
+    background-color: grey;
   }
   
   .movie-header-image {

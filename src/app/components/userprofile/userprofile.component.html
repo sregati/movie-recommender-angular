@@ -17,13 +17,18 @@
              
         </form> 
       <!-- CONTENT HERE -->
-      <mat-label><h3> Change the Genre </h3></mat-label> 
+      <mat-label><h3> Select the Genre</h3></mat-label> 
+   <mat-label *ngFor="let g of Genre ;let i = index">
+      <mat-checkbox (ngModel) = "check" #check="ngModel"></mat-checkbox>
+         {{Genre[i].name}}
+   </mat-label>
+      <!-- <mat-label><h3> Change the Genre </h3></mat-label> 
       <mat-checkbox>Action</mat-checkbox><br>
       <mat-checkbox  >Comdedy</mat-checkbox><br>
       <mat-checkbox >Horror</mat-checkbox><br>
       <mat-checkbox >Animation</mat-checkbox><br>
       <mat-checkbox >Drama</mat-checkbox><br>
-      <mat-checkbox>Historical</mat-checkbox><br>
+      <mat-checkbox>Historical</mat-checkbox><br> -->
    
     </mat-card-content>
     <mat-card-actions>
