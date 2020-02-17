@@ -17,6 +17,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -31,17 +33,20 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    
     RecommendationComponent,
     //UserprofileComponent
   ],
   imports: [
     HttpClientModule,
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatCheckboxModule,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatGridListModule,
     MatCardModule,
