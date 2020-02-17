@@ -2,34 +2,6 @@
 <mat-toolbar style="text-align: center">Welcome To Registration Page</mat-toolbar>
  <mat-card class="my-card">
     <mat-card-content>
-<<<<<<< HEAD
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="my-form">
-            <div class="form-group">
-                <mat-form-field class="full-width">
-                    <mat-label>First Name</mat-label>
-                    <input  matInput  placeholder="First name"  formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"   required>
-                </mat-form-field>
-             <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                <div *ngIf="f.firstName.errors.required">First Name is required</div>
-            </div>
-            </div>
-
-            <div class="form-group">
-                <mat-form-field class="full-width">
-                    <mat-label>Last Name</mat-label>
-                    <input  matInput  placeholder="Last Name" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"   required>
-                </mat-form-field>
-                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-                    <div *ngIf="f.lastName.errors.required">Last Name is required</div>
-                </div>
-            </div>
-
-
-            <div class="form-group">
-             <mat-form-field class="full-width">
-                <mat-label>Email</mat-label>
-                <input  matInput  placeholder="Email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" >
-=======
         <form class="my-form" #registerForm="ngForm">
             <mat-form-field class="full-width">
                 <mat-label>First Name</mat-label>
@@ -48,43 +20,15 @@
              <mat-form-field class="full-width">
                 <mat-label>Email</mat-label>
                 <input  matInput  placeholder="Email" (ngModel) = "email" #email="ngModel"  name="email">
->>>>>>> 77657e1534b907a69f3d83679ec88417408c951a
              </mat-form-field>
-             <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                <div *ngIf="f.email.errors.required">Email is required</div>
-                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
-            </div>
-        </div>
-        <div class="form-group">
              <mat-form-field class="full-width">
                 <mat-label>Password</mat-label>
-<<<<<<< HEAD
-                <input  matInput  placeholder="Password"  formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" >
-=======
                 <input  matInput  placeholder="Password" (ngModel) = "password" #password="ngModel"  name="password">
->>>>>>> 77657e1534b907a69f3d83679ec88417408c951a
              </mat-form-field>
-
-             <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                <div *ngIf="f.password.errors.required">Password is required</div>
-                <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
-            </div>
-        </div>
-
-        <div class="form-group">
              <mat-form-field class="full-width">
                 <mat-label>Confirm Password</mat-label>
-<<<<<<< HEAD
-                <input  matInput  placeholder="Password"  formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }">
-=======
                 <input  matInput  placeholder="Password"  name="confirmPassword">
->>>>>>> 77657e1534b907a69f3d83679ec88417408c951a
              </mat-form-field>
-             <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
-                <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
-                <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
-            </div>
-        </div>
         </form> 
       <!-- CONTENT HERE -->
    <mat-label><h3> Select the Genre</h3></mat-label> 
@@ -104,13 +48,7 @@
       <!-- REGISTER BUTTON -->
     </mat-card-actions>
     <button mat-stroked-button color="warn">Cancel</button>
-<<<<<<< HEAD
-    <div class="form-group">
-    <button mat-stroked-button  routerLinkActive="mat-accent" color ="primary">Register</button>
-</div>
-=======
     <button mat-stroked-button color ="primary" (click)="register(registerForm)">Register</button>
   
->>>>>>> 77657e1534b907a69f3d83679ec88417408c951a
  </mat-card>
       
