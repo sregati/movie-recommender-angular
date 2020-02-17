@@ -61,8 +61,9 @@ export class LoginService {
   }
 
 
-registerAuth(user: User) {
-    return this.http.post("/user", user);
+registerAuth(newUser: User) {
+    //return this.http.post("/user", newUser);
+    console.log(newUser);
 }
 
 
