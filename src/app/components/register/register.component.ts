@@ -16,7 +16,6 @@ export class RegisterComponent implements OnInit {
   lastName: string;
   email: string;
   password: string;
-  liked:any[]
   Genre: any[] = [
     { id: 11, name: 'Action' },
     { id: 12, name: 'Comedy' },

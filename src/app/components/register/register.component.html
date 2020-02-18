@@ -43,7 +43,7 @@
     <mat-card-actions>
       <!-- REGISTER BUTTON -->
     </mat-card-actions>
-    <button mat-stroked-button color="warn">Cancel</button>
+    <button mat-stroked-button [routerLink]="['/login']" color="warn">Cancel</button>
     <button mat-stroked-button color ="primary" (click)="register(registerForm)">Register</button>
   
  </mat-card>

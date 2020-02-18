@@ -36,4 +36,8 @@ export class UserprofileComponent implements OnInit {
     })  
       }
 
+      updateGenre(){
+        
+      }
+
 }

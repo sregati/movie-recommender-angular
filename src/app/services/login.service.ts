@@ -67,15 +67,11 @@ registerAuth(newUser: User) {
     return this.http.post("/user", newUser);
 }
 
-// getUserDetailsById(id: number) {
-//   return this.http.get(this.configUrl+id);
-// }
 getUserDetails() {
   return this.http.get<User>(this.configUrl);
 }
 
 
-  
   logout() {
     localStorage.removeItem('token');
     this.currentTokenSubject.next(null);
