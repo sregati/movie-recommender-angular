@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Movie } from 'src/app/movie';
+import { RecommendationsService } from 'src/app/services/recommendations.service';
+import { LoginService } from 'src/app/services/login.service';
+import { User } from 'src/app/user';
+import { switchMap } from 'rxjs/operators';
 
 export interface Card {
   title: string;
@@ -16,16 +21,15 @@ export interface Card {
 })
 export class RecommendationComponent implements OnInit {
 
-  cards: Card[] = [
-    {title:'Annabelle Comes Home', subtitle:'Horror', image:'/assets/images/annabelle.jpg',description:'While babysitting the daughter of Ed and Lorraine Warren, a teenager and her friend unknowingly awaken an evil spirit trapped in a doll.', cols: 1, rows: 1},
-    {title:'Annabelle Comes Home', subtitle:'Horror', image:'/assets/images/annabelle.jpg',description:'While babysitting the daughter of Ed and Lorraine Warren, a teenager and her friend unknowingly awaken an evil spirit trapped in a doll.', cols: 1, rows: 1},
-    {title:'Annabelle Comes Home', subtitle:'Horror', image:'/assets/images/annabelle.jpg',description:'While babysitting the daughter of Ed and Lorraine Warren, a teenager and her friend unknowingly awaken an evil spirit trapped in a doll.', cols: 1, rows: 1},
-    {title:'Annabelle Comes Home', subtitle:'Horror', image:'/assets/images/annabelle.jpg',description:'While babysitting the daughter of Ed and Lorraine Warren, a teenager and her friend unknowingly awaken an evil spirit trapped in a doll.', cols: 1, rows: 1},
-  ];
+  movies: Movie[];
+  userDetails: User;
 
-  constructor() { }
+  constructor(private recommend: RecommendationsService, private login: LoginService) { }
 
   ngOnInit() {
-  }
+    this.login.getUserDetails().pipe(switchMap(data => this.recommend.getRecommendations(data))).subscribe(
+      movies => this.movies = movies
+    );
 
+}
 }

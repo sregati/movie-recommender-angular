@@ -12,6 +12,7 @@ import { Genre } from '../../genre'
 })
 export class RegisterComponent implements OnInit {
 
+  hide = true;
   firstName: string;
   lastName: string;
   email: string;
