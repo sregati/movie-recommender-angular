@@ -63,8 +63,7 @@ export class LoginService {
 
 
 registerAuth(newUser: User) {
-     console.log(newUser);
-    return this.http.post("/mrs/", newUser);
+    return this.http.post("/mrs/registration/user", newUser);
 }
 
 // updateGenre(newSelection: User['liked']) {
@@ -73,7 +72,7 @@ registerAuth(newUser: User) {
 // }
 
 getUserDetails() {
-  return this.http.get<User>(this.configUrl);
+  return this.http.get<User>("/mrs/UserProfile/user");
 }
 
 
