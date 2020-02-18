@@ -6,5 +6,5 @@ export class User{
     password: string;
     firstName: string;
     lastName: string;
-    liked: Genre[];
+    genres: Genre[];
 }

@@ -36,7 +36,6 @@ export class RegisterComponent implements OnInit {
 
   register(form: NgForm){
     let newUser: User = form.value;
-    console.log(this.Genre);
     this.login.registerAuth(newUser);
     this.router.navigate(['/login']);
   }

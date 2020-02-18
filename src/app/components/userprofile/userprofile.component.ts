@@ -33,14 +33,14 @@ export class UserprofileComponent implements OnInit {
       console.log(data);
       this.userDetails = data;
       this.Genre.forEach(g => {
-        g.checked = data.liked.some(g1 => g1.id == g.id);
+        g.checked = data.genres.some(g1 => g1.id == g.id);
       });
       console.log(this.Genre);
     })  
       }
 
       updateGenre(){
-          return this.http.put("/mrs/moviepreferences/" + this.userDetails.id, this.userDetails.liked).subscribe();
+          return this.http.put("/mrs/moviepreferences/" + this.userDetails.id, this.userDetails.genres).subscribe();
       }
 
 }
