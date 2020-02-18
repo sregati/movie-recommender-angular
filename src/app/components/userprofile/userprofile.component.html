@@ -1,14 +1,13 @@
 <mat-toolbar>Welcome To User Profile Page</mat-toolbar>
  <mat-card class="my-card">
     <mat-card-content>
-        <form class="my-form">
+      <form class="my-form"  #userProfile="ngForm">
             <mat-label>First Name: {{userDetails?.firstName}}</mat-label><br>
             <mat-label>Last Name: {{userDetails?.lastName}}</mat-label><br>
-            <mat-label>Email: {{userDetails?.email}}</mat-label><br>
-                  
+            <mat-label>Email: {{userDetails?.email}}</mat-label><br>            
             <mat-label><h3> Change the Genre</h3></mat-label> 
             <mat-label *ngFor="let g of Genre">
-               <mat-checkbox value="{{g.id}}" checked="{{g.checked}}"></mat-checkbox>
+               <mat-checkbox [(ngModel)] = "g.checked" [name]="g.name" [value]="g.id"></mat-checkbox>
                   {{g.name}}
             </mat-label>
    

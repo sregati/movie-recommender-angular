@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
+import { NgForm } from '@angular/forms';
 import { Genre } from 'src/app/genre';
 import { User } from 'src/app/user';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -22,9 +24,10 @@ export class UserprofileComponent implements OnInit {
     { id: 16, name: 'Historical' }
   ];
 
-  constructor(private router:Router, private login:LoginService) { }
+  constructor(private router:Router, private login:LoginService, private http: HttpClient) { }
 
   ngOnInit() {
+
     this.login.getUserDetails
     ().subscribe((data: User)=>{
       console.log(data);
@@ -37,7 +40,7 @@ export class UserprofileComponent implements OnInit {
       }
 
       updateGenre(){
-        
+          return this.http.put("/mrs/moviepreferences/" + this.userDetails.id, this.userDetails.liked).subscribe();
       }
 
 }
