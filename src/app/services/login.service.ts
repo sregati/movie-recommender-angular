@@ -9,6 +9,7 @@ import { User } from '../user';
 })
 export class LoginService {
 
+  configUrl = 'assets/details.json';
   redirectUrl = "/";
   currentTokenSubject : BehaviorSubject<string>;
   users: any[] = [
@@ -59,6 +60,23 @@ export class LoginService {
       })
     );
   }
+
+
+registerAuth(newUser: User) {
+     console.log(newUser);
+    return this.http.post("/mrs/", newUser);
+}
+
+// updateGenre(newSelection: User['liked']) {
+//   console.log(newSelection);
+//  return this.http.patch("/user", newSelection);
+// }
+
+getUserDetails() {
+  return this.http.get<User>(this.configUrl);
+}
+
+
   logout() {
     localStorage.removeItem('token');
     this.currentTokenSubject.next(null);

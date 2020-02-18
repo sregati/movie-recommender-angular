@@ -1,3 +1,4 @@
+<mat-card class="recommendation-card">
 <mat-grid-list cols="4" rowHeight="1000px">
     <mat-grid-tile *ngFor="let card of cards" [colspan]="card.cols" [rowspan]="card.rows">
          <mat-card class="movie-card">
@@ -11,9 +12,10 @@
                      {{card.description}}
               </mat-card-content>
               <mat-card-actions>
-                <button mat-button>LIKE</button>
+                <button mat-raised-button color="warn">LIKE</button>
               </mat-card-actions>
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list>
+</mat-card>
 

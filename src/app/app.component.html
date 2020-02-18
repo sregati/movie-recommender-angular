@@ -5,7 +5,7 @@
     <div>
       <a mat-button [routerLink]="'/recommendation'"> Recommendation </a>
       <a mat-button [routerLink]="'/movies'"> Movies </a>
-      <a *ngIf="token$ | async" mat-button [routerLink]="'/user'"> User Profile </a> 
+      <a *ngIf="token$ | async" mat-button [routerLink]="'/userprofile'"> User Profile </a> 
       <a *ngIf="token$ | async" mat-button (click)="logout()"> Logout </a>
       <!-- <a mat-button [routerLink]="'/userprofile'"> User Profile </a> -->
     </div>

@@ -1,0 +1,14 @@
+
+     { 
+    "id": "1", 
+    "firstName":"abc",
+    "lastName":"def",
+    "email":"abc@gmail.com", 
+    "liked":[
+       {"id":11, "name":"Action"},
+       {"id":12, "name":"Comedy"},
+       {"id":13, "name":"Horror"}
+      ]
+   }
+ 
+ 
