@@ -12,6 +12,6 @@ export class RecommendationsService {
   constructor(private http: HttpClient) { }
 
   getRecommendations(user: User) {
-    return this.http.get('/mrs/recommender/'+user.id+'/recommendations');
+    return this.http.get<Movie[]>('/mrs/users/'+user.id+'/recommendations');
   }
 }

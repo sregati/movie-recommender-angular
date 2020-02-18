@@ -66,11 +66,6 @@ registerAuth(newUser: User) {
     return this.http.post("/mrs/registration/user", newUser);
 }
 
-// updateGenre(newSelection: User['liked']) {
-//   console.log(newSelection);
-//  return this.http.patch("/user", newSelection);
-// }
-
 getUserDetails() {
   return this.http.get<User>("/mrs/UserProfile/user");
 }

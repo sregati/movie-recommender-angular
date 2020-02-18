@@ -6,22 +6,22 @@
            
             <mat-form-field class="full-width">
                <mat-label>Email</mat-label>
-               <input  matInput  placeholder="Email" [(ngModel)] = "email" name="email">
+               <input matInput  placeholder="Email" [(ngModel)] = "email" name="email">
             </mat-form-field>
             <mat-form-field class="full-width">
                <mat-label>Password</mat-label>
-               <input  matInput  placeholder="Password" [(ngModel)] = "password"  name="password">
+               <input matInput [type]="hide ? 'password' : 'text'"  placeholder="Password" [(ngModel)] = "password"  name="password">
+               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+               </button>
             </mat-form-field>
             
        </form> 
-     <!-- CONTENT HERE -->
    
   
    </mat-card-content>
    <mat-card-actions>
-     <!-- REGISTER BUTTON -->
    </mat-card-actions>
-   <!-- <button mat-stroked-button color="cancel">Cancel</button> -->
    <button mat-stroked-button (click)="logIn()">Login</button>
    <button mat-stroked-button [routerLink]="['/register']" >Register</button>
  

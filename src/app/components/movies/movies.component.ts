@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
+import { Movie } from 'src/app/movie';
 
 export interface Card {
   title: string;
@@ -17,16 +18,17 @@ export interface Card {
 })
 export class MoviesComponent implements OnInit {
 
-  cards: Card[] = [
-    {title:'Annabelle Comes Home', subtitle:'Horror', image:'/assets/images/annabelle.jpg',description:'While babysitting the daughter of Ed and Lorraine Warren, a teenager and her friend unknowingly awaken an evil spirit trapped in a doll.', cols: 1, rows: 1},
-    {title:'Annabelle Comes Home', subtitle:'Horror', image:'/assets/images/annabelle.jpg',description:'While babysitting the daughter of Ed and Lorraine Warren, a teenager and her friend unknowingly awaken an evil spirit trapped in a doll.', cols: 1, rows: 1},
-    {title:'Annabelle Comes Home', subtitle:'Horror', image:'/assets/images/annabelle.jpg',description:'While babysitting the daughter of Ed and Lorraine Warren, a teenager and her friend unknowingly awaken an evil spirit trapped in a doll.', cols: 1, rows: 1},
-    {title:'Annabelle Comes Home', subtitle:'Horror', image:'/assets/images/annabelle.jpg',description:'While babysitting the daughter of Ed and Lorraine Warren, a teenager and her friend unknowingly awaken an evil spirit trapped in a doll.', cols: 1, rows: 1},
-  ];
+
+  allMovies: Movie[];
 
   constructor(private movieService: MoviesService) { }
 
   ngOnInit(): void {
+
+    this.movieService.getMovies
+    ().subscribe((data: Movie[])=>{
+      this.allMovies = data}
+    );
   }
 
 }

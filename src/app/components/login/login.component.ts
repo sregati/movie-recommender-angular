@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class LoginComponent implements OnInit {
 
+  hide = true;
   email: string;
   password: string;
   loginSub : Subscription;
