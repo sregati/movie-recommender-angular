@@ -14,11 +14,4 @@ export class RecommendationsService {
   getRecommendations(user: User) {
     return this.http.get<Movie[]>('/mrs/users/'+user.id+'/recommendations');
   }
-
-  likeMovie(movie: Movie, user: User) {
-    return this.http.put('/mrs/users/'+user.id+'/likes/', movie);
-  }
-  likeGenre(genre: Genre, user: User) {
-    return this.http.put('/mrs/users/'+user.id+'/genres/', genre);
-  }
 }
