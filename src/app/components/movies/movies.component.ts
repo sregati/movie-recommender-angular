@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MoviesService } from 'src/app/services/movies.service';
 
 export interface Card {
   title: string;
@@ -23,7 +24,7 @@ export class MoviesComponent implements OnInit {
     {title:'Annabelle Comes Home', subtitle:'Horror', image:'/assets/images/annabelle.jpg',description:'While babysitting the daughter of Ed and Lorraine Warren, a teenager and her friend unknowingly awaken an evil spirit trapped in a doll.', cols: 1, rows: 1},
   ];
 
-  constructor() { }
+  constructor(private movieService: MoviesService) { }
 
   ngOnInit(): void {
   }

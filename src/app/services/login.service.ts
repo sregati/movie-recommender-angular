@@ -63,15 +63,15 @@ export class LoginService {
 
 
 registerAuth(newUser: User) {
-    //return this.http.post("/user", newUser);
-    console.log(newUser);
+     console.log(newUser);
+    return this.http.post("/user", newUser);
 }
 
 // getUserDetailsById(id: number) {
-//   return this.http.get('/mrs/movies/'+id);
+//   return this.http.get(this.configUrl+id);
 // }
 getUserDetails() {
-  return this.http.get(this.configUrl);
+  return this.http.get<User>(this.configUrl);
 }
 
 

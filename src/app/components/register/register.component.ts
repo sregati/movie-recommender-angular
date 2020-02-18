@@ -31,10 +31,17 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {}
 
+  onCheckboxChange(event){
+    if (event.target.checked) {
+      this.liked.push(event.target.value);
+    }
+  }
+
   register(form: NgForm){
     let newUser: User = form.value;
     this.login.registerAuth(newUser);
     this.router.navigate(['/login']);
   }
 
+  
 }

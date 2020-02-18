@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
+import { Genre } from 'src/app/genre';
+import { User } from 'src/app/user';
 
 
 @Component({
@@ -10,8 +12,8 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class UserprofileComponent implements OnInit {
 
-  userDetails = [];
-  Genre = [
+  userDetails: User;
+  Genre:any[] = [
     { id: 11, name: 'Action' },
     { id: 12, name: 'Comedy' },
     { id: 13, name: 'Horror' },
@@ -24,9 +26,13 @@ export class UserprofileComponent implements OnInit {
 
   ngOnInit() {
     this.login.getUserDetails
-    ().subscribe((data: any[])=>{
+    ().subscribe((data: User)=>{
       console.log(data);
       this.userDetails = data;
+      this.Genre.forEach(g => {
+        g.checked = data.liked.some(g1 => g1.id == g.id);
+      });
+      console.log(this.Genre);
     })  
       }
 
