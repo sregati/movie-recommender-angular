@@ -48,17 +48,17 @@ export class LoginService {
   constructor(private http: HttpClient) { this.currentTokenSubject = new BehaviorSubject<string>(localStorage.getItem('token'));}
 
   loginAuth(email, password) {
-    return of("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.kXSdJhhUKTJemgs8O0rfIJmUaxoSIDdClL_OPmaC7Eo").pipe(
-        tap(m => {
-          localStorage.setItem('token', m.toString());
-          this.currentTokenSubject.next(localStorage.getItem('token'));
-        }));
-    // return this.http.post('/mrs/loginAuth', { email: email, password: password }).pipe(
-    //   tap(m => {
-    //     localStorage.setItem('token', m.toString());
-    //     this.currentTokenSubject.next(localStorage.getItem('token'));
-    //   })
-    // );
+    // return of("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.kXSdJhhUKTJemgs8O0rfIJmUaxoSIDdClL_OPmaC7Eo").pipe(
+    //     tap(m => {
+    //       localStorage.setItem('token', m.toString());
+    //       this.currentTokenSubject.next(localStorage.getItem('token'));
+    //     }));
+    return this.http.post('/mrs/login', { email: email, password: password }).pipe(
+      tap(m => {
+        localStorage.setItem('token', m.toString());
+        this.currentTokenSubject.next(localStorage.getItem('token'));
+      })
+    );
   }
 
 
