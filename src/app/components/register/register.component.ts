@@ -16,8 +16,8 @@ export class RegisterComponent implements OnInit {
   lastName: string;
   email: string;
   password: string;
-  liked: Genre[];
-  Genre = [
+  liked:any[]
+  Genre: any[] = [
     { id: 11, name: 'Action' },
     { id: 12, name: 'Comedy' },
     { id: 13, name: 'Horror' },
@@ -29,16 +29,14 @@ export class RegisterComponent implements OnInit {
 
   constructor(private router:Router, private login:LoginService) { }
 
-  ngOnInit() {}
-
-  onCheckboxChange(event){
-    if (event.target.checked) {
-      this.liked.push(event.target.value);
-    }
+  ngOnInit() {
+    this.Genre.forEach(g => g.checked = false);
   }
+
 
   register(form: NgForm){
     let newUser: User = form.value;
+    console.log(this.Genre);
     this.login.registerAuth(newUser);
     this.router.navigate(['/login']);
   }

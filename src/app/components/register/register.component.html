@@ -32,8 +32,9 @@
          
       <!-- CONTENT HERE -->
    <mat-label><h3> Select the Genre</h3></mat-label> 
-   <mat-label *ngFor="let g of Genre">
-      <mat-checkbox [value]="g.id" (change)="onCheckboxChange($event)"></mat-checkbox>
+   <mat-label 
+   *ngFor="let g of Genre">
+      <mat-checkbox [(ngModel)] = "g.checked" [name]="g.name" [value]="g.id"></mat-checkbox>
          {{g.name}}
    </mat-label>
    
