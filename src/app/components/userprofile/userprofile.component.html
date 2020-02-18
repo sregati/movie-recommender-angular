@@ -2,9 +2,9 @@
  <mat-card class="my-card">
     <mat-card-content>
         <form class="my-form">
-            <mat-label>First Name: {{userDetails.firstName}}</mat-label><br>
-            <mat-label>Last Name: {{userDetails.lastName}}</mat-label><br>
-            <mat-label>Email: {{userDetails.email}}</mat-label><br>
+            <mat-label>First Name: {{userDetails?.firstName}}</mat-label><br>
+            <mat-label>Last Name: {{userDetails?.lastName}}</mat-label><br>
+            <mat-label>Email: {{userDetails?.email}}</mat-label><br>
                   
             <mat-label><h3> Change the Genre</h3></mat-label> 
             <mat-label *ngFor="let g of Genre">
