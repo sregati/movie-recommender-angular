@@ -10,7 +10,7 @@ export class MoviesService {
   constructor(private http: HttpClient) { }
 
   getMovies() {
-    return this.http.get('/mrs/movies-ws');
+    return this.http.get<Movie[]>('/mrs/movies-ws');
   }
   getMovieById(id: number) {
     return this.http.get('/mrs/movies-ws/'+id);
