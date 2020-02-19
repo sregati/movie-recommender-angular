@@ -17,13 +17,12 @@ export class RegisterComponent implements OnInit {
   lastName: string;
   email: string;
   password: string;
-  Genre: any[] = [
-    { id: 11, name: 'Action' },
-    { id: 12, name: 'Comedy' },
-    { id: 13, name: 'Horror' },
-    { id: 14, name: 'Animation' },
-    { id: 15, name: 'Drama' },
-    { id: 16, name: 'Historical' }
+  Genre:any[] = [
+    { id: 1, name: 'Comedy' },
+    { id: 2, name: 'Action' },
+    { id: 3, name: 'Romance' },
+    { id: 4, name: 'Thriller' },
+    { id: 5, name: 'Fantasy' }
   ];
 
 
