@@ -5,10 +5,12 @@ import { HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { Observable} from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-    constructor(private login: LoginService, private router: Router) {
+    constructor(private login: LoginService, private router: Router, private  dialog:  MatDialog) {
 
     }
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -23,7 +25,11 @@ export class AuthInterceptor implements HttpInterceptor {
         return next.handle(authReq).pipe(
             tap(null, error => {
                 if(error instanceof HttpErrorResponse && (error as HttpErrorResponse).status == 401)
+                {
+                    this.dialog.open(DialogComponent,{ data: {
+                    message:  "Enter valid credentials!!!" }});
                     this.router.navigate(['/login']);
+                }
             })
         );
     }
