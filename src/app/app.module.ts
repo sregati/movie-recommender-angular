@@ -67,6 +67,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
     MatListModule,
     MatDialogModule
   ],
+  entryComponents:[DialogComponent],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },],
   bootstrap: [AppComponent]
 })
