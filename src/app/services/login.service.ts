@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, of } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { tap, switchMap } from 'rxjs/operators';
 import { User } from '../user';
 
 @Injectable({
@@ -56,6 +56,7 @@ export class LoginService {
     return this.http.post('/mrs/login', { email: email, password: password }).pipe(
       tap(m => {
         localStorage.setItem('token', m.toString());
+        localStorage.setItem('email', email);
         this.currentTokenSubject.next(localStorage.getItem('token'));
       })
     );
@@ -67,12 +68,15 @@ registerAuth(newUser: User) {
 }
 
 getUserDetails() {
-  return this.http.get<User>("/mrs/UserProfile/user");
+  return this.http.get<User>("/mrs/loginservice/user?"+"email="+localStorage.getItem('email')).pipe(
+    switchMap(user => this.http.get<User>('/mrs/userprofile/user/'+user.id))
+  );
 }
 
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('email');
     this.currentTokenSubject.next(null);
   }
 
