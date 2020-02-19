@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -27,6 +28,8 @@ import { AuthInterceptor } from './auth-interceptor';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
 import { MoviesComponent } from './components/movies/movies.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+
 
 
 @NgModule({
@@ -37,7 +40,9 @@ import { MoviesComponent } from './components/movies/movies.component';
     
     RecommendationComponent,
     UserprofileComponent,
-    MoviesComponent
+    MoviesComponent,
+    DialogComponent,
+
   ],
   imports: [
     HttpClientModule,
@@ -59,7 +64,8 @@ import { MoviesComponent } from './components/movies/movies.component';
     MatIconModule,  
     MatInputModule,
     MatRadioModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },],
   bootstrap: [AppComponent]
