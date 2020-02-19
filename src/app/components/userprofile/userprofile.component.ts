@@ -15,13 +15,20 @@ import { HttpClient } from '@angular/common/http';
 export class UserprofileComponent implements OnInit {
 
   userDetails: User;
+
+  /* |        1 | Comedy     |
+|        2 | Action     |
+|        3 | Romance    |
+|        4 | Thriller   |
+|        5 | Fantasy    |
++----------+------------+
+*/
   Genre:any[] = [
-    { id: 11, name: 'Action' },
-    { id: 12, name: 'Comedy' },
-    { id: 13, name: 'Horror' },
-    { id: 14, name: 'Animation' },
-    { id: 15, name: 'Drama' },
-    { id: 16, name: 'Historical' }
+    { id: 2, name: 'Action' },
+    { id: 1, name: 'Comedy' },
+    { id: 4, name: 'Thriller' },
+    { id: 5, name: 'Fantasy' },
+    { id: 3, name: 'Romance' }
   ];
 
   constructor(private router:Router, private login:LoginService, private http: HttpClient) { }
@@ -40,7 +47,7 @@ export class UserprofileComponent implements OnInit {
       }
 
       updateGenre(){
-          return this.http.put("/mrs/moviepreferences/" + this.userDetails.id, this.userDetails.genres).subscribe();
+          return this.http.put("/mrs/moviepreferences/user/" + this.userDetails.id, this.userDetails.genres).subscribe();
       }
 
 }
