@@ -12,16 +12,15 @@ export class AuthInterceptor implements HttpInterceptor {
 
     }
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        return this.login.currentTokenSubject.pipe(
-            switchMap(token => {
-                const r = request.clone({
-                    setHeaders: {
-                        Authorization: "Bearer " + token
-                    }
-                });
+        let token = this.login.currentTokenSubject.value;
+        
+        const authReq = request.clone({
+            setHeaders: {
+                Authorization: "Bearer " + token
+            }
+        });
 
-                return next.handle(r);
-            }),
+        return next.handle(authReq).pipe(
             tap(null, error => {
                 if(error instanceof HttpErrorResponse && (error as HttpErrorResponse).status == 401)
                     this.router.navigate(['/login']);
