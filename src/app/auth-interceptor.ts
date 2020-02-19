@@ -24,7 +24,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
         return next.handle(authReq).pipe(
             tap(null, error => {
-                if(error instanceof HttpErrorResponse && (error as HttpErrorResponse).status == 401)
+                if(error instanceof HttpErrorResponse && ((error as HttpErrorResponse).status == 401 || (error as HttpErrorResponse).status == 403))
                 {
                     this.dialog.open(DialogComponent,{ data: {
                     message:  "Enter valid credentials!!!" }});

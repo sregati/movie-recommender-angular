@@ -30,9 +30,7 @@ export class LoginComponent implements OnInit {
                     message:  "Successfully logged in!!!" }});
                  this.router.navigate([this.login.redirectUrl]);
                  }
-      // (error)=> { this.dialog.open(DialogComponent,{ data: {
-      //             message:  "Enter valid credentials!!!" }});
-      );
+    );
   }
   // ngOnDestroy(): void {
   //   this.loginSub.unsubscribe();
