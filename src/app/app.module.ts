@@ -29,6 +29,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { ValidateDirective } from './validate.directive';
 
 
 
@@ -42,6 +43,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
     UserprofileComponent,
     MoviesComponent,
     DialogComponent,
+    ValidateDirective,
 
   ],
   imports: [

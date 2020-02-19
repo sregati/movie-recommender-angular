@@ -2,28 +2,28 @@
 <mat-toolbar style="text-align: center">Welcome To Registration Page</mat-toolbar>
  <mat-card class="my-card">
     <mat-card-content>
-        <form class="my-form" #registerForm="ngForm">
-            <mat-form-field class="full-width">
+        <form class="my-form" #registerForm="ngForm" [mustMatch]="['password', 'confirmPassword']">
+            <mat-form-field class="form-group full-width">
                 <mat-label>First Name</mat-label>
-                <input  matInput  placeholder="First name" (ngModel) = "firstName" #firstName="ngModel" name="firstName" [ngClass]="{ 'is-invalid': registerForm.submitted && firstName.invalid }" required>
+                <input  matInput class="form-control" placeholder="First name" (ngModel) = "firstName" #firstName="ngModel" name="firstName" [ngClass]="{ 'is-invalid': registerForm.submitted && firstName.invalid }" required>
                 <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger">
                   <div *ngIf="firstName.errors.required">
                    First Name is required.
                   </div>
                </div>
              </mat-form-field>
-             <mat-form-field class="full-width">
+             <mat-form-field class="form-group full-width">
                 <mat-label>Last Name</mat-label>
-                <input  matInput  placeholder="Last Name" (ngModel) = "lastName" #lastName="ngModel" name="lastName"  required>
+                <input  matInput class="form-control"  placeholder="Last Name" (ngModel) = "lastName" #lastName="ngModel" name="lastName"  required>
                 <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger">
                   <div *ngIf="lastName.errors.required">
                    Last Name is required.
                   </div>
                </div>
                </mat-form-field>
-             <mat-form-field class="full-width">
+             <mat-form-field class="form-group full-width">
                 <mat-label>Email</mat-label>
-                <input  matInput  placeholder="Email" (ngModel) = "email" #email="ngModel"  name="email"  required email>
+                <input  matInput class="form-control" placeholder="Email" (ngModel) = "email" #email="ngModel"  name="email"  required email>
                 <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
                   <div *ngIf="email.errors.required">
                    Email is required.
@@ -33,19 +33,32 @@
                   </div>
                </div>
                </mat-form-field>
-             <mat-form-field class="full-width">
+             <mat-form-field class="form-group full-width">
                 <mat-label>Password</mat-label>
-                <input matInput [type]="hide ? 'password' : 'text'"  placeholder="Password" (ngModel) = "password" #password="ngModel"  name="password">
+                <input matInput [type]="hide ? 'password' : 'text'" class="form-control" placeholder="Password" (ngModel) = "password" #password="ngModel"  name="password" required>
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                </button>
+               <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+                  <div *ngIf="password.errors.required">
+                   Password is required.
+                  </div>
+               </div>
              </mat-form-field>
-             <mat-form-field class="full-width">
+             <mat-form-field class="form-group full-width">
                 <mat-label>Confirm Password</mat-label>
-                <input matInput [type]="hide ? 'password' : 'text'"  placeholder="Password"  name="confirmPassword">
+                <input matInput [type]="hide ? 'password' : 'text'" class="form-control" placeholder="Password" (ngModel) = "confirmPassword" #confirmPassword="ngModel"  name="confirmPassword" required>
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                </button>
+               <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)" class="alert alert-danger">
+                  <div *ngIf="confirmPassword.errors.required">
+                     Confirm Password is required.
+                  </div>
+                  <div *ngIf="confirmPassword.errors.mustMatch">
+                     Passwords need to match
+                  </div>
+               </div>
              </mat-form-field>
    <mat-label><h3> Select the Genre</h3></mat-label> 
    <mat-label 
