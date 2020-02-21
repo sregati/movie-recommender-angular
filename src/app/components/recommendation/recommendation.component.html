@@ -1,13 +1,13 @@
 <mat-card class="recommendation-card">
 <mat-grid-list cols="4" rowHeight="1000px">
-    <mat-grid-tile *ngFor="let card of movies" [colspan]="card.cols" [rowspan]="card.rows">
+    <mat-grid-tile *ngFor="let card of movies">
          <mat-card class="movie-card">
             <mat-card-header>
               <div mat-card-avatar class="movie-header-image"></div>
               <mat-card-title>{{card.title}}</mat-card-title>
-              <mat-card-subtitle>{{card.genre.name}}</mat-card-subtitle>
+              <mat-card-subtitle>{{card.genre.genreName}}</mat-card-subtitle>
             </mat-card-header>
-                <img img mat-card-image src="{{card.imageUrl}}" alt="Photo of Annabelle"> 
+                <img img mat-card-image src="{{card.imageURL}}"> 
               <mat-card-content>
                      {{card.description}}
               </mat-card-content>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { User } from '../user';
 import { Movie } from '../movie';
 import { Genre } from '../genre';
@@ -12,6 +12,8 @@ export class RecommendationsService {
   constructor(private http: HttpClient) { }
 
   getRecommendations(user: User) {
-    return this.http.get<Movie[]>('/mrs/users/'+user.id+'/recommendations');
+    let ids = user.genres.map(g => g.id);
+    
+    return this.http.get<Movie[]>('/mrs/recommender/recommendations?prefs='+ids.join(','));
   }
 }

@@ -47,7 +47,7 @@ export class UserprofileComponent implements OnInit {
       }
 
       updateGenre(){
-          return this.http.put("/mrs/moviepreferences/user/" + this.userDetails.id, this.userDetails.genres).subscribe();
+          return this.http.put("/mrs/moviepreferences/user/" + this.userDetails.id, this.Genre.filter(g => g.checked)).subscribe();
       }
 
 }
