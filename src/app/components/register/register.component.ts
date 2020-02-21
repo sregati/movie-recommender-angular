@@ -35,6 +35,7 @@ export class RegisterComponent implements OnInit {
 
   register(form: NgForm){
     let newUser: User = form.value;
+    newUser.genres = this.Genre.filter(g => g.checked);
     this.login.registerAuth(newUser).subscribe();
     this.router.navigate(['/login']);
   }

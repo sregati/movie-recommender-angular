@@ -61,13 +61,13 @@
                </div>
              </mat-form-field>
    <mat-label><h3> Select the Genre</h3></mat-label> 
-   <mat-label 
-   *ngFor="let g of Genre">
-      <mat-checkbox [(ngModel)] = "g.checked" [name]="g.name" [value]="g.id"></mat-checkbox>
-         {{g.name}}
-   </mat-label>
    
 </form>
+<mat-label 
+*ngFor="let g of Genre">
+   <mat-checkbox [(ngModel)] = "g.checked" [name]="g.name" [value]="g.id"></mat-checkbox>
+      {{g.name}}
+</mat-label>
     </mat-card-content>
     <mat-card-actions>
     </mat-card-actions>
