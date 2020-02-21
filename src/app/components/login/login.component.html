@@ -6,14 +6,27 @@
            
             <mat-form-field class="full-width">
                <mat-label>Email</mat-label>
-               <input matInput  placeholder="Email" [(ngModel)] = "email" name="email">
+               <input matInput  placeholder="Email" (ngModel) = "email" #email="ngModel" name="email" required email>
+               <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                  <div *ngIf="email.errors.required">
+                   Email is required.
+                  </div>
+                  <div *ngIf="email.errors.email">
+                   Enter valid email address.
+                  </div>
+               </div>
             </mat-form-field>
             <mat-form-field class="full-width">
                <mat-label>Password</mat-label>
-               <input matInput [type]="hide ? 'password' : 'text'"  placeholder="Password" [(ngModel)] = "password"  name="password">
+               <input matInput [type]="hide ? 'password' : 'text'"  placeholder="Password" (ngModel) = "password" #password="ngModel"  name="password" required>
                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                </button>
+               <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+                  <div *ngIf="password.errors.required">
+                   Password is required.
+                  </div>
+               </div>
             </mat-form-field>
             
        </form> 

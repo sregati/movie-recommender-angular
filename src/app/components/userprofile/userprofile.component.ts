@@ -15,14 +15,7 @@ import { HttpClient } from '@angular/common/http';
 export class UserprofileComponent implements OnInit {
 
   userDetails: User;
-
-  /* |        1 | Comedy     |
-|        2 | Action     |
-|        3 | Romance    |
-|        4 | Thriller   |
-|        5 | Fantasy    |
-+----------+------------+
-*/
+  
   Genre:any[] = [
     { id: 2, name: 'Action' },
     { id: 1, name: 'Comedy' },
